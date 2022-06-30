@@ -1,0 +1,48 @@
+Utamakan Sudah mengikuti tutorial saya sebelumnya Untuk cara menggunakan Termux.
+
+Sebelum memulai Silahkan Install nano dlu 
+
+$pkg install nano
+$nano "nama filemu".py
+
+
+Jika Kurang paham Tonton Tutorialnya terlebih dahulu.
+
+
+Scriptnya :
+
+
+import requests, os
+
+def logo():
+  print("""
+    |Surat cinta|
+    |Author :USER Eror21|
+
+""")
+
+def menu():
+  os.system('clear')
+  logo()
+  print("\nMasukan Nomer Di Awali (8xxx)")
+  nomor = input("Nomer Target : 0")
+  jum = int(input("Jumlah : "))
+  for i in range(jum):
+      req = requests.get("https://ainxbot-sms.herokuapp.com/api/spamsms",params={"phone":nomor}).text
+      if 'terkirim' in req:
+           print("\nSpam Terkirim")
+      else:
+           print("\nSpam Gagal")
+           os.system('clear')
+
+menu()
+
+
+
+Salin Semua text di atas tempelkan ke terminal kalian.
+Susun yang benar biar gk eror.
+
+Jika Eror Tonton kembali video tutorial dari saya.
+
+Terimakasih.
+
